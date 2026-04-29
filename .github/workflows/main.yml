@@ -1,0 +1,26 @@
+            - name: AWS ECR PULL AND RUN
+  # You may pin to the exact commit or the version.
+  # uses: chris5451/aws-ecr-run-image@731d9610966253e2bd0b0414efdf6087fb7d42d1
+  uses: chris5451/aws-ecr-run-image@v1.0.1
+  with:
+    # The AWS access key id
+    access_key_id: 
+    # The AWS secret access key
+    secret_access_key: 
+    # AWS Account ID
+    account_id: 
+    # Tag of image to use
+    tag: 
+    # Port to publish
+    port: 
+    # Name for the container
+    name: 
+    # A comma-delimited list of AWS account IDs that are associated with the ECR registries. If you do not specify a registry, the default ECR registry is assumed
+    registry_ids: # optional, default is 
+    # A role to assume under the account_id account.
+    assume_role: # optional, default is 
+    # Name of your ECR repository
+    repo: 
+    # The AWS region
+    region: 
+          
