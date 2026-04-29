@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaz-Vision | AI & Automation</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+        html { scroll-behavior:smooth; }
+        body { background-color:#0f172a; color:#f8fafc; line-height:1.6; }
+        a { text-decoration:none; color:inherit; }
+        ul { list-style:none; }
+
+        header { background:rgba(15,23,42,0.95); backdrop-filter:blur(10px); position:fixed; width:100%; top:0; z-index:1000; border-bottom:1px solid #1e293b; }
+        nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 10%; max-width:1400px; margin:0 auto; }
+        .logo { font-size:1.5rem; font-weight:800; color:#38bdf8; letter-spacing:1px; }
+        .nav-links { display:flex; gap:2rem; }
+        .nav-links a { transition:0.3s; font-weight:500; }
+        .nav-links a:hover { color:#38bdf8; }
+
+        section { padding:100px 10%; min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
+        h2 { font-size:2.5rem; margin-bottom:3rem; text-align:center; color:#38bdf8; }
+
+        .hero { text-align:center; background:radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
+        .hero h1 { font-size:clamp(2.5rem,8vw,4.5rem); margin-bottom:1rem; background:linear-gradient(90deg,#fff,#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .hero p { color:#94a3b8; font-size:1.25rem; margin-bottom:2.5rem; max-width:600px; margin-left:auto; margin-right:auto; }
+
+        .cards-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+        .card { background:#1e293b; padding:2.5rem; border-radius:16px; border:1px solid #334155; transition:all 0.3s ease; }
+        .card:hover { transform:translateY(-10px); border-color:#38bdf8; box-shadow:0 10px 30px -10px rgba(56,189,248,0.2); }
+        .card h3 { margin-bottom:1rem; color:#38bdf8; }
+        .card p { color:#94a3b8; }
+
+        .carousel-wrapper { position:relative; overflow:hidden; border-radius:20px; height:450px; border:1px solid #334155; }
+        .carousel { display:flex; width:300%; height:100%; animation:slide 15s infinite ease-in-out; }
+        .slide { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:2rem; font-weight:bold; padding:20px; text-align:center; }
+        .slide1 { background:linear-gradient(45deg,#1e293b,#334155); }
+        .slide2 { background:linear-gradient(45deg,#0f172a,#1e293b); }
+        .slide3 { background:linear-gradient(45deg,#334155,#475569); }
+        @keyframes slide { 0%,25%{transform:translateX(0)} 33%,58%{transform:translateX(-33.33%)} 66%,91%{transform:translateX(-66.66%)} 100%{transform:translateX(0)} }
+
+        form { background:#1e293b; padding:2.5rem; border-radius:16px; max-width:650px; margin:0 auto; width:100%; border:1px solid #334155; }
+        .form-group { margin-bottom:1.5rem; }
+        label { display:block; margin-bottom:0.5rem; color:#94a3b8; font-size:0.9rem; }
+        input, textarea { width:100%; padding:1rem; background:#0f172a; border:1px solid #334155; color:white; border-radius:8px; outline:none; transition:0.3s; }
+        input:focus, textarea:focus { border-color:#38bdf8; }
+        button { background:#38bdf8; color:#0f172a; padding:1rem; border:none; border-radius:8px; font-weight:bold; cursor:pointer; width:100%; font-size:1rem; transition:0.3s; }
+        button:hover { background:#7dd3fc; transform:scale(1.02); }
+
+        #alert-box { display:none; padding:1rem; border-radius:8px; margin-bottom:1.5rem; font-weight:500; text-align:center; }
+        #alert-box.success { background:#134e4a; border:1px solid #14b8a6; color:#5eead4; }
+        #alert-box.error   { background:#450a0a; border:1px solid #ef4444; color:#fca5a5; }
+
+        footer { padding:3rem; text-align:center; border-top:1px solid #1e293b; color:#64748b; background:#0f172a; }
+
+        @media(max-width:768px){
+            nav { flex-direction:column; gap:1rem; }
+            .nav-links { gap:1rem; font-size:0.9rem; }
+            section { padding:80px 5%; }
+            .carousel-wrapper { height:300px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">MAAZ-VISION</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>AI-Driven & Automation Engineer</h1>
+    <p>Designing intelligent systems and seamless CI/CD pipelines to bridge the gap between code and reality.</p>
+</section>
+
+<section id="about">
+    <h2>Expertise</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Innovation</h3>
+            <p>Leveraging cutting-edge LLMs and neural networks to solve complex business logic.</p>
+        </div>
+        <div class="card">
+            <h3>Automation</h3>
+            <p>Building robust DevOps environments with Kubernetes, Docker, and Terraform.</p>
+        </div>
+        <div class="card">
+            <h3>Security</h3>
+            <p>Implementing DevSecOps practices to ensure data integrity and infrastructure safety.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Project Showcase</h2>
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <div class="slide slide1">
+                <span>DevOps Excellence</span>
+                <p style="font-size:1rem;margin-top:10px;font-weight:normal;color:#cbd5e1;">Zero-downtime deployment pipelines.</p>
+            </div>
+            <div class="slide slide2">
+                <span>Cloud Infrastructure</span>
+                <p style="font-size:1rem;margin-top:10px;font-weight:normal;color:#cbd5e1;">Auto-scaling multi-cloud architectures.</p>
+            </div>
+            <div class="slide slide3">
+                <span>Scalable Containers</span>
+                <p style="font-size:1rem;margin-top:10px;font-weight:normal;color:#cbd5e1;">Microservices orchestration at scale.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Start a Conversation</h2>
+    <form id="contactForm">
+        <div id="alert-box"></div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" rows="5" placeholder="How can I help you with your next project?"></textarea>
+        </div>
+        <button type="submit" id="submitBtn">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 Maaz-Vision. Built with precision and passion.</p>
+</footer>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const btn      = document.getElementById('submitBtn');
+        const alertBox = document.getElementById('alert-box');
+
+        btn.textContent    = 'Sending...';
+        btn.disabled       = true;
+        alertBox.style.display = 'none';
+
+        const payload = {
+            name:    document.getElementById('name').value.trim(),
+            email:   document.getElementById('email').value.trim(),
+            message: document.getElementById('message').value.trim()
+        };
+
+        try {
+            const res  = await fetch('/submit', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify(payload)
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                alertBox.className   = 'success';
+                alertBox.textContent = '✅ Message sent successfully! We will get back to you soon.';
+                document.getElementById('contactForm').reset();
+            } else {
+                alertBox.className   = 'error';
+                alertBox.textContent = '❌ Error: ' + (data.error || 'Something went wrong.');
+            }
+        } catch (err) {
+            alertBox.className   = 'error';
+            alertBox.textContent = '❌ Network error. Please try again.';
+        }
+
+        alertBox.style.display = 'block';
+        btn.textContent        = 'Send Message';
+        btn.disabled           = false;
+    });
+</script>
+
+</body>
+</html>
